@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>ru.korniltsev.intellij.android.generate</id>
   <name>Android CodeGenerator</name>
-  <version>1.0</version>
+  <version>1.1</version>
   <vendor email="korniltsev.anatoly@gmail.com" url="https://github.com/kurganec/intellij-android-codegenerator" >Korniltsev.Anatoly</vendor>
 
   <description><![CDATA[

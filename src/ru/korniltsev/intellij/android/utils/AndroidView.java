@@ -41,10 +41,17 @@ public class AndroidView {
         //todo make smarter
         String[] words = getId().split("_");
         StringBuilder fieldName = new StringBuilder("");
+        boolean isFirst = true;
         for (String word : words) {
+
             String[] idTokens = word.split("\\.");
             char[] chars = idTokens[idTokens.length - 1].toCharArray();
+            if(!isFirst && chars.length > 0) {
+                chars[0] = Character.toUpperCase(chars[0]);
+
+            }
             fieldName.append(chars);
+            isFirst = false;
         }
         return fieldName.toString();
     }

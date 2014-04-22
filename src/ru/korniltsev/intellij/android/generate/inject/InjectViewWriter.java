@@ -1,6 +1,6 @@
 package ru.korniltsev.intellij.android.generate.inject;
 
-import com.intellij.codeInsight.actions.ReformatAndOptimizeImportsProcessor;
+import com.intellij.codeInsight.actions.ReformatCodeProcessor;
 import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElementFactory;
@@ -39,7 +39,7 @@ public class InjectViewWriter extends BaseGenerateCodeWriter {
         }
 
         JavaCodeStyleManager.getInstance(prj).shortenClassReferences(cls);
-        new ReformatAndOptimizeImportsProcessor(prj, cls.getContainingFile(), false)
+        new ReformatCodeProcessor(prj, cls.getContainingFile(), null, false)
                 .runWithoutProgress();
     }
 }

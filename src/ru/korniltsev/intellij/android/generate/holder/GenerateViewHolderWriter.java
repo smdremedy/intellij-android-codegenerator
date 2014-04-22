@@ -1,6 +1,6 @@
 package ru.korniltsev.intellij.android.generate.holder;
 
-import com.intellij.codeInsight.actions.ReformatAndOptimizeImportsProcessor;
+import com.intellij.codeInsight.actions.ReformatCodeProcessor;
 import com.intellij.psi.*;
 import com.intellij.psi.codeStyle.JavaCodeStyleManager;
 import ru.korniltsev.intellij.android.generate.BaseGenerateCodeWriter;
@@ -59,7 +59,7 @@ public class GenerateViewHolderWriter extends BaseGenerateCodeWriter {
         //add and reformat
         PsiElement newClass = cls.add(viewHolderClass);
         JavaCodeStyleManager.getInstance(prj).shortenClassReferences(newClass);
-        new ReformatAndOptimizeImportsProcessor(prj, cls.getContainingFile(), true)
+        new ReformatCodeProcessor(prj, cls.getContainingFile(),null, true)
                 .runWithoutProgress();
 
 //        //todo rename inplace
